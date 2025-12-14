@@ -1,14 +1,14 @@
 spring:
   application:
     name: flex-sample-backend
-
+  config:
+    import:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC&useUnicode=true&character_set_server=utf8mb4
+    url: jdbc:tc:mysql:8.0.36:///test?serverTimezone=UTC&TC_REUSABLE=true&useUnicode=true&character_set_server=utf8mb4&connectionTimeZone=UTC&forceConnectionTimeZoneToSession=false&preserveInstants=true&cacheDefaultTimezone=false&zeroDateTimeBehavior=convertToNull&jdbcCompliantTruncation=false&sessionVariables=sql_mode%3D'STRICT_ALL_TABLES'&rewriteBatchedStatements=true
     username: test
     password: test
-
   liquibase:
-    enabled: false
+    change-log: classpath:/db/changelog/payroll/db.changelog-initial-schema-and-data.yaml
 
 server:
   tomcat:
@@ -39,7 +39,7 @@ spring:
 
 # local에서 server port 충돌을 피하기 위한 설정. gateway에 붙어야하면 이것을 기록해두는게 좋습니다
 server:
-  port: 12346
+  port: 12345
 
 management:
   endpoints:

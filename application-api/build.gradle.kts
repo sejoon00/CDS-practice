@@ -11,8 +11,13 @@ dependencies {
     implementation(project(":payroll:api"))
     implementation(project(":payroll:repository-jdbc"))
 
-    implementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:mysql")
+    testImplementation("org.testcontainers:junit-jupiter")
     runtimeOnly("com.mysql:mysql-connector-j") {
         exclude(group = "com.google.protobuf", module = "protobuf-java")
     }
+}
+
+tasks.withType<Test>().configureEach {
+    systemProperty("spring.profiles.active", "test")
 }

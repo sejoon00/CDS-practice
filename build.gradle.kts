@@ -30,6 +30,14 @@ allprojects {
     }
 }
 
+subprojects {
+    pluginManager.withPlugin("base") {
+        configure<BasePluginExtension> {
+            archivesName.set(path.trim(':').replace(':', '-'))
+        }
+    }
+}
+
 configureByTypePrefix("kotlin") {
     apply(plugin = "java")
     apply(plugin = "kotlin")
