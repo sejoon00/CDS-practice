@@ -1,6 +1,7 @@
 [versions]
 kotlin = "2.1.21"
 kotlinx-coroutine = "1.10.2"
+crac = "1.5.0"
 
 [plugins]
 build-recipe = { id = "com.linecorp.build-recipe-plugin", version = "1.1.1" }
@@ -14,3 +15,4 @@ kotlin-spring = { id = "org.jetbrains.kotlin.plugin.spring", version.ref = "kotl
 [libraries]
 kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
 kotlinx-coroutine-bom = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-bom", version.ref = "kotlinx-coroutine" }
+crac = { group = "org.crac", name = "crac", version.ref = "crac" }
