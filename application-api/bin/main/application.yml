@@ -6,6 +6,8 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test?serverTimezone=UTC&useUnicode=true&character_set_server=utf8mb4
     username: test
     password: test
+    hikari:
+      allow-pool-suspension: true
 
   liquibase:
     enabled: true
